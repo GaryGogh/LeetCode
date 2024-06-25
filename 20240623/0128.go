@@ -1,21 +1,18 @@
 func longestConsecutive(nums []int) int {
-    HM:=map[int]bool {}
-    for _,i:=range nums{
-        HM[i]=true
-        
+    HM:=map[int]bool{}
+    for _,num:=range nums{
+        HM[num]=true
     }
     res:=0
-    for num:=range HM{
-        if !HM[num-1]{
+    for i:=range HM{
+        if!HM[i-1]{
             cur:=1
-           for HM[num+1]{
-                num+=1
-                cur+=1           
-           } 
-           if res<cur{
-            res=cur
-           }
-        }
+            for HM[i+1]{
+                i=i+1
+                cur=cur+1
+            }
+        res=max(res,cur)
+    }
     }
     return res
 }
